@@ -11,15 +11,11 @@ Technology ที่ใช้ <br/>
 -เพิ่มเพื่อน (In development) <br/>
 
 
-รัน
+วิธีรันหลังจากโหลด
 ```bash
+npm install
+แล้ว
 npm run dev
-# หรือ
-yarn dev
-# หรือ
-pnpm dev
-# หรือ
-bun dev
 ```
 
 เปิด [http://localhost:3000](http://localhost:3000) ด้วย Browser.
