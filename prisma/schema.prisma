@@ -1,0 +1,50 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// User model
+model User {
+  id                  Int          @id @default(autoincrement()) // Auto-incrementing ID
+  name                String       // User's name
+  email               String       @unique // Unique email for each user
+  password            String       // User's password
+  createdAt           DateTime     @default(now()) // Timestamp for when user created account
+  posts               Post[]       // Relationship to Post (one user can have many posts)
+  
+  sentFriendships     Friendship[] @relation("UserSentFriendships") // Friend requests sent by this user
+  receivedFriendships Friendship[] @relation("UserReceivedFriendships") // Friend requests received by this user
+}
+
+// Friendship model
+model Friendship {
+  id          Int              @id @default(autoincrement()) // Auto-incrementing ID
+  requester   User             @relation("UserSentFriendships", fields: [requesterId], references: [id]) // User who sent the request
+  requesterId Int
+  
+  friend      User             @relation("UserReceivedFriendships", fields: [friendId], references: [id]) // User who receives the request
+  friendId    Int
+
+  status      FriendshipStatus @default(PENDING) // Status of the friendship (PENDING, ACCEPTED, REJECTED)
+  createdAt   DateTime         @default(now()) // Timestamp for when the friend request was made
+}
+
+enum FriendshipStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+// Blog Post model
+model Post {
+  id        Int      @id @default(autoincrement()) // Auto-incrementing ID
+  title     String // Title of the post
+  content   String // Content of the post
+  createdAt DateTime @default(now()) // Timestamp for when the post is created
+  authorId  Int // Foreign key referencing User
+  author    User     @relation(fields: [authorId], references: [id]) // Define the relation to User
+}
