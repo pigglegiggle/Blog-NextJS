@@ -1,6 +1,6 @@
 ## โปรเจค Blog พัฒนาด้วย NextJS
 
-Technology ที่ใช้
+Technology ที่ใช้ <br/>
 -NextJS <br/>
 -Prisma <br/>
 -MySQL <br/>
