@@ -20,11 +20,6 @@ function Index() {
             setMessage('กรุณา Login ก่อนเข้าหน้าหลัก');
             router.push('/auth/signin');
         } else {
-            const sessionStoredName = sessionStorage.getItem('name');
-            if (sessionStoredName) {
-                setUsername(sessionStoredName);
-            }
-
             // ดึง Posts มาหลังจากเรียก token สำเร็จ
             fetchPosts();
         }
