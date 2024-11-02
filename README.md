@@ -1,14 +1,14 @@
 ## โปรเจค Blog พัฒนาด้วย NextJS
 
 Technology ที่ใช้
--NextJS
--Prisma
--MySQL
+-NextJS <br/>
+-Prisma <br/>
+-MySQL <br/>
 
 # ระบบ
--เขียนโพสต์
--Login/Register
--เพิ่มเพื่อน (In development)
+-เขียนโพสต์ <br/>
+-Login/Register <br/>
+-เพิ่มเพื่อน (In development) <br/>
 
 
 รัน
