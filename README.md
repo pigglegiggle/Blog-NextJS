@@ -1,6 +1,6 @@
-## โปรเจค Blog พัฒนาด้วย NextJS
+## Blog Web App
 
-Technology ที่ใช้ <br/>
+Technologies: <br/>
 -NextJS <br/>
 -Prisma <br/>
 -MySQL <br/>
