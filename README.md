@@ -16,10 +16,6 @@ DATABASE_URL="your-database-url-here"
 ```bash
 npx prisma migrate dev --name init
 ```
-Or, for quick sync without migrations:
-```bash
-npx prisma db push
-```
 
 4. **Run development server**
 ```bash
@@ -35,18 +31,14 @@ npm run dev
 npm install
 ```
 
-2. **สร้างไฟล์ `.env`** ในโฟลเดอร์ root และใส่ database URL ของคุณ:
+2. **สร้างไฟล์ `.env`** ในโฟลเดอร์ root และใส่ database URL:
 ```env
 DATABASE_URL="your-database-url-here"
 ```
 
-3. **รัน Prisma migrations** (สร้างตารางใน database):
+3. **รัน Prisma migrations** (สร้าง Table):
 ```bash
 npx prisma migrate dev --name init
-```
-หรือสำหรับการ sync แบบรวดเร็วโดยไม่ต้องสร้าง migration:
-```bash
-npx prisma db push
 ```
 
 4. **รันเซิร์ฟเวอร์สำหรับพัฒนา**
