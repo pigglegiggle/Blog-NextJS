@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useUser } from '@/context/UserContext';
-import Navbar from './components/Navbar';
-import Blogs from './components/Blogs';
+import Navbar from '../components/Navbar';
+import Blogs from '../components/Blogs';
 import axios from 'axios';
 
 function Index() {
