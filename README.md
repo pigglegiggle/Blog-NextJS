@@ -1,64 +1,56 @@
 # Project Setup
 
-This project uses [Prisma](https://www.prisma.io/) as the ORM.  
-To connect to the database, you need to set up the `DATABASE_URL` environment variable in a `.env` file at the project root.
+## English Version
 
-## 1. Create `.env` file
+1. **Install dependencies**
+```bash
+npm install
+```
 
-In the root directory, create a file called `.env` and add:
-
+2. **Create `.env` file** in the root directory and add your database URL:
 ```env
 DATABASE_URL="your-database-url-here"
 ```
 
-## 2. Database URL Examples
-
-### MySQL (XAMPP / local)
-```env
-DATABASE_URL="mysql://root:@localhost:3306/mydb"
-```
-- **Username:** `root` (default in XAMPP)  
-- **Password:** empty by default  
-- **Database:** `mydb` (replace with your DB name)  
-
-### MySQL (with password)
-```env
-DATABASE_URL="mysql://user:password@localhost:3306/mydb"
-```
-
-### PostgreSQL
-```env
-DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
-```
-
-### SQLite
-```env
-DATABASE_URL="file:./dev.db"
-```
-
-### SQL Server
-```env
-DATABASE_URL="sqlserver://localhost:1433;database=mydb;user=sa;password=your_password;encrypt=true"
-```
-
-### MongoDB
-```env
-DATABASE_URL="mongodb+srv://user:password@cluster0.mongodb.net/mydb"
-```
-
-## 3. Apply Migrations
-
-Once the `.env` file is set up, run:
-
+3. **Apply Prisma migrations** (create tables in your database):
 ```bash
 npx prisma migrate dev --name init
 ```
-
-Or, if you just want to push schema without migrations (for testing):
-
+Or, for quick sync without migrations:
 ```bash
 npx prisma db push
 ```
 
-✅ Now your project is ready to connect to the database.
+4. **Run development server**
+```bash
+npm run dev
+```
+
+---
+
+## ภาษาไทย
+
+1. **ติดตั้ง dependencies**
+```bash
+npm install
+```
+
+2. **สร้างไฟล์ `.env`** ในโฟลเดอร์ root และใส่ database URL ของคุณ:
+```env
+DATABASE_URL="your-database-url-here"
+```
+
+3. **รัน Prisma migrations** (สร้างตารางใน database):
+```bash
+npx prisma migrate dev --name init
+```
+หรือสำหรับการ sync แบบรวดเร็วโดยไม่ต้องสร้าง migration:
+```bash
+npx prisma db push
+```
+
+4. **รันเซิร์ฟเวอร์สำหรับพัฒนา**
+```bash
+npm run dev
+```
 
