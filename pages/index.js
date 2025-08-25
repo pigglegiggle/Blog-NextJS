@@ -34,7 +34,7 @@ function Index() {
     return (
         <div>
             <Navbar />
-            <Blogs posts={posts} /> {/* ส่ง posts ไปยัง blogs component ผ่าน props */}
+            <Blogs posts={posts || []} /> {/* Always pass an array */}
         </div>
     );
 }

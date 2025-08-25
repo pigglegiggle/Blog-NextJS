@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-function Blogs({ posts }) {
+function Blogs({ posts = [] }) {
     return (
         <>
             <div className='flex justify-center mt-6'>
